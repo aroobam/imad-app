@@ -33,6 +33,20 @@ var articleTwo = {
     <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>`
 }
 
+var articleThree = {
+    title: 'Article Three | Madhan',
+    heading: 'Article Three',
+    date: 'May 13, 2017',
+    content: `
+    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
+    
+    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
+    
+    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
+    
+    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>`
+}
+
 function createTemplate(data) {
     var title = data.title;
     var date = data.date;
@@ -81,6 +95,13 @@ app.get('/article-one', function(req, res){
     res.send(createTemplate(articleOne));
 })
 
+app.get('/article-two', function(req, res){
+    res.send(createTemplate(articleTwo));
+})
+
+app.get('/article-three', function(req, res){
+    res.send(createTemplate(articleThree));
+})
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
