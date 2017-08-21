@@ -5,47 +5,47 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article One | Madhan',
-    heading: 'Article One',
-    date: 'Aug 21, 2017',
-    content: `
-    <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
-    
-    <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
-    
-    <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
-    
-    <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>`
-}
-
-var articleTwo = {
-    title: 'Article Two | Madhan',
-    heading: 'Article Two',
-    date: 'Jul 04, 2017',
-    content: `
-    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
-    
-    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
-    
-    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
-    
-    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>`
-}
-
-var articleThree = {
-    title: 'Article Three | Madhan',
-    heading: 'Article Three',
-    date: 'May 13, 2017',
-    content: `
-    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
-    
-    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
-    
-    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
-    
-    <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>`
-}
+var articles = {
+    'article-two': {
+        title: 'Article Two | Madhan',
+        heading: 'Article Two',
+        date: 'Jul 04, 2017',
+        content: `
+        <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
+        
+        <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
+        
+        <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
+        
+        <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>`
+    },
+    'article-one': {
+        title: 'Article One | Madhan',
+        heading: 'Article One',
+        date: 'Aug 21, 2017',
+        content: `
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
+        
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
+        
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
+        
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>`
+    },    
+    'article-three': {
+        title: 'Article Three | Madhan',
+        heading: 'Article Three',
+        date: 'May 13, 2017',
+        content: `
+        <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
+        
+        <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
+        
+        <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>
+        
+        <p>This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three This is my content for Article Three</p>`
+    }
+};
 
 function createTemplate(data) {
     var title = data.title;
@@ -92,15 +92,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/article-one', function(req, res){
-    res.send(createTemplate(articleOne));
-})
-
-app.get('/article-two', function(req, res){
-    res.send(createTemplate(articleTwo));
-})
-
-app.get('/article-three', function(req, res){
-    res.send(createTemplate(articleThree));
+    res.send(createTemplate(articles[0]));
 })
 
 // Do not change port, otherwise your app won't run on IMAD servers
