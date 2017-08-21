@@ -19,6 +19,20 @@ var articleOne = {
     <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>`
 }
 
+var articleTwo = {
+    title: 'Article Two | Madhan',
+    heading: 'Article Two',
+    date: 'Jul 04, 2017',
+    content: `
+    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
+    
+    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
+    
+    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>
+    
+    <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>`
+}
+
 function createTemplate(data) {
     var title = data.title;
     var date = data.date;
