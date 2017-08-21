@@ -91,8 +91,9 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article-one', function(req, res){
-    res.send(createTemplate(articles.article-one));
+app.get('/:articleName', function(req, res){
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 })
 
 // Do not change port, otherwise your app won't run on IMAD servers
