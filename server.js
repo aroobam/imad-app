@@ -6,6 +6,19 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
+    'article-one': {
+        title: 'Article One | Madhan',
+        heading: 'Article One',
+        date: 'Aug 21, 2017',
+        content: `
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
+        
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
+        
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
+        
+        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>`
+    },   
     'article-two': {
         title: 'Article Two | Madhan',
         heading: 'Article Two',
@@ -19,19 +32,6 @@ var articles = {
         
         <p>This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two This is my content for Article Two</p>`
     },
-    'article-one': {
-        title: 'Article One | Madhan',
-        heading: 'Article One',
-        date: 'Aug 21, 2017',
-        content: `
-        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
-        
-        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
-        
-        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>
-        
-        <p>This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One This is my content for Article One</p>`
-    },    
     'article-three': {
         title: 'Article Three | Madhan',
         heading: 'Article Three',
@@ -93,7 +93,7 @@ app.get('/ui/madi.png', function (req, res) {
 
 app.get('/:articleName', function(req, res){
     var articleName = req.params.articleName;
-    res.send(createTemplate(articles['article-one']));
+    res.send(createTemplate(articles[articleName]));
 })
 
 // Do not change port, otherwise your app won't run on IMAD servers
