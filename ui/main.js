@@ -1,8 +1,8 @@
 console.log('Loaded!');
 
-var submit = document.getElementById("submit");
+var submit = document.getElementById("submit_btn");
 
-submit.onCLick = function(){
+submit.oncLick = function(){
     console.log("Clicked!");
     
     //create a request object
