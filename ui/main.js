@@ -15,7 +15,7 @@ submit.onclick = function(){
     console.log(password);
     
     request.onreadystatechange = function(){
-        if(request.readyState === XHttpRequest.DONE){
+        if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
                 alert("Logged in successfully");
             } else if(request.status === 403) {
