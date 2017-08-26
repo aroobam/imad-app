@@ -2,7 +2,7 @@ console.log('Loaded!');
 
 var submit = document.getElementById("submit_btn");
 
-submit.oncLick = function(){
+submit.onclick = function(){
     console.log("Clicked!");
 
 };
