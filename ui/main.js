@@ -6,7 +6,7 @@ submit.onclick = function(){
     console.log("Clicked!");
     
     //create a request object
-    var request = new XHttpRequest();
+    var request = new XMLHttpRequest();
     
     var username = document.getElementById("username");
     var password = document.getElementById("password");
