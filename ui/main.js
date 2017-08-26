@@ -3,6 +3,7 @@ console.log('Loaded!');
 var submit = document.getElementById("submit");
 
 submit.onCLick = function(){
+    console.log("Clicked!");
     
     //create a request object
     var request = new XHttpRequest();
