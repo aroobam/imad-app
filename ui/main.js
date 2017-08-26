@@ -1,2 +1,25 @@
-console.log('Loaded!');
-
+<!doctype html>
+<html>
+    <head>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="center">
+            <img src="/ui/madi.png" class="img-medium"/>
+        </div>
+        <br>
+        <div class="center text-big bold">
+            Hi! This is Madhan's webapp.
+        </div>
+        <br>
+        <div class="center">
+            <input type="text" id="username" placeholder="username" />
+            <br><br>
+            <input type="password" id="password" placeholder="password" />
+            <br><br>
+            <input type="submit" id="submit" />
+        </div>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+    </body>
+</html>
