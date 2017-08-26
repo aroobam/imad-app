@@ -2,8 +2,6 @@ console.log('Loaded!');
 
 var submit = document.getElementById("submit");
 
-console.log(submit);
-
 submit.onCLick = function(){
     
     //create a request object
@@ -32,3 +30,5 @@ submit.onCLick = function(){
     request.setRequestHeader("Content-Type", "application/json");
     request.send(JSON.stringify({"username":username,"password":password}));
 };
+
+console.log ("done!");
