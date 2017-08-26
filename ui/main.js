@@ -2,6 +2,8 @@ console.log('Loaded!');
 
 var submit = document.getElementById("submit_btn");
 
+console.log(submit);
+
 submit.onCLick = function(){
     
     //create a request object
