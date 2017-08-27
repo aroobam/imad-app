@@ -4,10 +4,15 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret: 'someRandomSecretValue',
+    cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
+}));
 
 var config = {
     user : "aroobam",
@@ -160,6 +165,12 @@ app.post('/login', function(req, res){
                 var salt = dbString.split('$')[2];
                 var hashedPassword = hash(password, salt);
                 if( hashedPassword === dbString) {
+                    //Set the session
+                    req.session.auth = {userId: result.rows[0].id};
+                    //Set cookie with a session id
+                    //internally, on the server side, it maps the session id to an object
+                    //{auth:{userId}}
+                    
                     res.send('credentials correct ');
                 }
                 else {
